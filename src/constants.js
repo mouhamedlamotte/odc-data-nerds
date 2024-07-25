@@ -1,4 +1,4 @@
-let debug = true;
+let debug = false;
 if (process.env.NODE_ENV !== "production") {
    debug = true;
   console.log("Debug mode is on");
