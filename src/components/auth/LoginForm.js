@@ -29,7 +29,6 @@ export const LoginForm = () => {
       if (!UserFormValidation(user, setError)) return;
       const userCredential = await LoginWithEmailAndPassword(user);
       if (userCredential) {
-        console.log(userCredential);;
         setCookie("token", userCredential.accessToken);
         router.replace("/");
       } else {

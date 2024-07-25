@@ -17,11 +17,9 @@ export const AuthLayout = ({ children, image }) => {
           let userCredential;
           if (provider === "google") {
              userCredential = await LoginWithGoogle()
-            console.log(userCredential);
           }
           if (provider === "github") {
             userCredential = await LoginWithGithub()
-            console.log(userCredential);
           }
           if (userCredential) {
             kdebug(`User: ${userCredential}`)

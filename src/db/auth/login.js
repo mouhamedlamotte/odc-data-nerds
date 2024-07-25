@@ -37,10 +37,8 @@ export const LoginWithGithub = async () => {
     try {
         signInWithPopup(auth, gihubProvider)
         .then((result) => {
-            console.log(result);
         });
         if (result) {
-            console.log(result.user);
             const user = result.user
             return user
         } else {

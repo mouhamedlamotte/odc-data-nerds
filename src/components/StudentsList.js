@@ -371,10 +371,8 @@ const AddStudent = ({ promos, onAdd }) => {
     setLoading(true);
     if (student.email && student.promo_id) {
       if (file) {
-        console.log(file.name);
         uploadImage(file, `students/avatars/${file.name}`).then(
           (url) => {
-            console.log("url", url);
             addDocument("Students", { ...student, avatar: url }).then(() => {
               setStudent({
                 avatar: "",
