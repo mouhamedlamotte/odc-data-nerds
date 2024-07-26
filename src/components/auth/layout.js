@@ -7,6 +7,7 @@ import { kdebug } from "@/constants";
 import { LoginWithGithub, LoginWithGoogle } from "@/db/auth/login";
 import { Separator } from "../ui/separator";
 import { setCookie } from "cookies-next";
+import Link from "next/link";
 
 export const AuthLayout = ({ children, image }) => {
   const router = useRouter();
@@ -60,7 +61,7 @@ export const AuthLayout = ({ children, image }) => {
             <div className="mt-6 ">
               <h3 className="text-4xl font-semibold mb-4">Bonjour ! </h3>
               <div>
-                <Button variant="link" className="p-0 text-amber-500 font-bold"
+                {/* <Button variant="link" className="p-0 text-amber-500 font-bold"
                 type="button"
                 onClick={()=>{
                     router.push(pathname === "/inside/auth/login" ? "/inside/auth/register" : "/inside/auth/login")
@@ -70,11 +71,10 @@ export const AuthLayout = ({ children, image }) => {
                       pathname === "/inside/auth/login" ? "S'inscrire" : "Se connecter"
                     }
                   
-                </Button>{" "}
+                </Button>{" "} */}
                 <span className="text-slate-600 dark:text-slate-400 ">
-                  ou {pathname === "/inside/auth/login" ? "se connecter" : "s'inscrire"}
-                  {" "}
-                  pour avoir accès aux fonctionnalités
+                    Ceci une Authentification avec firebase {" "}
+                    vous pouver visiter <Button className="p-0 text-amber-500 font-bold" variant="link"> <Link  href="/presentation">ma presentation</Link> </Button>
                 </span>
               </div>
             </div>
