@@ -34,3 +34,16 @@ export const getStudents = async (promo_id = null) => {
     });
     return students;
 }
+
+
+export const getQuestions = async () =>{
+    const querySnapshot = await getDocs(collection(db, "Questions"));
+    const questions = []
+    querySnapshot.forEach((doc) => {
+        questions.push({
+            id: doc.id, 
+            ...doc.data()
+        });
+    });
+    return questions;
+}
