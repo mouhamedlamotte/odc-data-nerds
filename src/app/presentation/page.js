@@ -248,57 +248,6 @@ const QuestionCard = ({ q }) => {
             {q?.reponse ? q.reponse : "Pas encore de reponse"}
           </p>
         </CardContent>
-        <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                // handleSendMessage();
-              }}
-              className="relative overflow-hidden rounded-lg border bg-background focus-within:ring-1 focus-within:ring-ring w-full flex flex-col gap-2"
-              x-chunk="dashboard-03-chunk-1"
-            >
-              <Label htmlFor="pseudo" className="sr-only">
-                pseudo
-              </Label>
-              <Input value={q.pseudo} 
-              // onChange={(e) => setQuestion({ ...question, pseudo: e.target.value })}
-               name = "pseudo" type="text" id="pseudo" placeholder="Votre pseudo" />
-              <Label htmlFor="message" className="sr-only">
-                Message
-              </Label>
-              <Textarea
-                name = "question"
-                value={q.question}
-                // onChange={(e) => setQuestion({ ...question, question: e.target.value })}
-                id="message"
-                placeholder="Poser une question ...."
-                className="min-h-12 resize-none border-0 p-3 shadow-none focus-visible:ring-0"
-              />
-              <div className="flex items-center p-3 pt-0">
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="ghost" size="icon">
-                      <Paperclip className="size-4" />
-                      <span className="sr-only">Attach file</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent side="top">Attach File</TooltipContent>
-                </Tooltip>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="ghost" size="icon">
-                      <Mic className="size-4" />
-                      <span className="sr-only">Use Microphone</span>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent side="top">Use Microphone</TooltipContent>
-                </Tooltip>
-                <Button type="submit" size="sm" className="ml-auto gap-1.5">
-                  Envoyer
-                  {/* {sending && <Loader className="animate-spin mr-2 h-4 w-4" />} */}
-                  {/* {!sending && <Send className="size-4" />} */}
-                </Button>
-              </div>
-            </form>
       </CollapsibleContent>
     </Card>
   </Collapsible>

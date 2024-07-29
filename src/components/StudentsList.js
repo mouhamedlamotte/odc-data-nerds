@@ -71,6 +71,7 @@ export function Students() {
   const [loading, setLoading] = useState(true);
   const [promos, setPromos] = useState([]);
   const [students, setStudents] = useState([]);
+  const [filteredStudents, setFilteredStudents] = useState([]);
 
 
   const { toast } = useToast();
@@ -141,6 +142,7 @@ export function Students() {
 
 
   const searchStudents = (searchTerm) => {
+    setFilteredStudents(students);
     const lowerCaseSearchTerm = searchTerm.toLowerCase();
     const new_students = students.filter(student =>
       student.firstName.toLowerCase().includes(lowerCaseSearchTerm) ||
@@ -150,7 +152,8 @@ export function Students() {
       student.promo_id.includes(lowerCaseSearchTerm)
     );
 
-    setStudents(new_students);
+    setFilteredStudents(new_students);
+    
   };
 
   return (
